@@ -1,0 +1,127 @@
+:root {
+
+    --darkCyan: hsl(158, 36%, 37%);
+    --darkerCyan: hsl(158, 36%, 20%);
+    --cream: hsl(30, 38%, 92%);
+
+    --veryDarkBlue: hsl(212, 21%, 14%);
+    --darkGrayishBlue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+
+    --ff-accent: 'Fraunces', serif;
+    --ff-main: 'Montserrat', sans-serif;
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  html, body {
+    height: 100%;
+  }
+  body {
+    line-height: 1.7;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+  body {
+    display: grid;
+    place-content: center;
+    margin: 1rem;
+
+    font-family: var(--ff-main);
+    font-weight: var(--fw-regular);
+    font-size: 0.875rem;
+    color: var(--darkGrayishBlue);
+    background-color: var(--cream);
+  }
+
+  /*  utilities */
+  .flex-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .button {
+    cursor: pointer;
+    display: inline-flex;
+    gap: .75rem;
+    justify-content: center;
+    align-items: center;
+
+    border: 0;
+    padding: 0.75em 1.5em;
+    border-radius: .5rem;
+    background-color: var(--darkCyan);
+    color: var(--white);
+    font-weight: var(--fw-bold);
+  }
+
+  .button:is(:hover, :focus) {
+    background-color: var(--darkerCyan);
+  }
+
+  .button[data-icon="shopping-cart"]::before {
+    content: '';
+    background-image: url('images/icon-cart.svg');
+    width: 15px;
+    height: 16px;
+  }
+
+  /* product styling */
+
+  .product {
+    display: grid;
+    background-color: var(--white);
+    border-radius: .5rem;
+    overflow: hidden;
+
+    max-width: 600px;
+  }
+
+  @media (min-width: 600px) {
+    .product {
+        grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .product__content {
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .product__category {
+    font-size: 0.825rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+  }
+
+  .product__title {
+    font-size: 2rem;
+    line-height: 1;
+    font-family: var(--ff-accent);
+    color: var(--veryDarkBlue)
+  }
+
+  .product__price {
+    font-size: 2rem;
+    font-family: var(--ff-accent);
+    color: var(--darkCyan);
+  }
