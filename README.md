@@ -16,6 +16,7 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS
 - Flexbox
+- CSS Grid
 
 ## See the live site [here](https://product-card-8yd.pages.dev/)!
 
